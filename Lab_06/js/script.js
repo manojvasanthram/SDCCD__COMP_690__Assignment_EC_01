@@ -6,8 +6,28 @@ let years;
 
 // COLLECT VALUES FROM THE USER
 investment = parseFloat(prompt('Enter investment amount as xxxx.xx'));
+
+while (isNaN(investment)) {
+    investment = parseFloat(
+        prompt('Invalid entry. Enter a numeric investment amount.')
+    );
+}
+
 rate = parseFloat(prompt('Enter interest rate as xx.x'));
+
+while (isNaN(rate) || rate < 0 || rate > 6) {
+    rate = parseFloat(
+        prompt('Invalid entry. Enter an interest rate between 0 and 6.')
+    );
+}
+
 years = parseInt(prompt('Enter the number of years you want to invest for'));
+
+while (isNaN(years) || years < 1 || years > 30) {
+    years = parseInt(
+        prompt('Invalid entry. Enter a number of years between 1 and 30.')
+    );
+}
 
 // CALCULATE FUTURE VALUE
 futureValue = investment;
